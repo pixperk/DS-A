@@ -45,6 +45,16 @@ using namespace std;
         return true;
     }
 
+int uniqueElementCount(int a[], int n){
+    int i=0;
+    for(int j=1; j<n; j++){
+        if(a[i]!=a[j]){
+            a[i+1]=a[j];
+            i++;
+        }
+    }
+    return (i+1);
+}
     int main()
 {      int n;
     cout<<"Enter your array size: "<<endl;
@@ -61,6 +71,7 @@ using namespace std;
     cout<<"\nSecond Largest element : "<<secondLargest(a,n)<<endl;
     cout<<"\nSecond Smallest element : "<<secondSmallest(a,n)<<endl;
     cout<<"Is the array sorted? "<<checkSorted(a,n)<<endl;
+    cout<<"Number of unique elements: "<<uniqueElementCount(a,n)<<endl;
      
  return 0;
 } 
